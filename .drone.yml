@@ -1,6 +1,7 @@
 workspace:
   base: /backend
   path: src/github.com/yfzm/FlawSweeper_Spring_Server
+
 pipeline:
   build:
     image: maven:3.6.0-jdk-8-alpine
