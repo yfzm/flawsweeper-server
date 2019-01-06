@@ -1,0 +1,14 @@
+workspace:
+  base: /backend
+  path: src/github.com/yfzm/FlawSweeper_Spring_Server
+pipeline:
+  build:
+    image: maven:3.6.0-jdk-8-alpine
+    commands:
+      - mvn install
+  publish:
+    image: plugins/docker
+    repo: bywind/flawsweeper-backend
+    tags: ["latest"]
+    secrets: [ docker_username, docker_password ]
+    dockerfile: Dockerfile
